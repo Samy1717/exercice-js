@@ -1,6 +1,8 @@
 document.getElementById('inscription').addEventListener('submit', function(e){
     let inputs = document.getElementById('inscription').getElementsByTagName('input');
     let erreur;
+    pseudo = ('Votre pseudo est : ') + document.getElementById('pseudo').value
+    email = ('Votre email est : ') + document.getElementById('email').value
 
 
     for (let i = 0; i < inputs.length; i++){
@@ -13,15 +15,12 @@ document.getElementById('inscription').addEventListener('submit', function(e){
         e.preventDefault();
         document.getElementById('erreur').innerHTML = erreur;
 
-        //Affichage pseudo et email dans console
-        let pseudo = document.getElementById('pseudo').value;
-        console.log('Le pseudo est:', pseudo)
-
-        let email = document.getElementById('email').value;
-        console.log('L email est:', email)
-
-
-    } else{
-        alert('Formulaire envoyé !');
+    } 
+    
+    else{
+        // alert('Formulaire envoyé !');
+        document.getElementById('affiche_pseudo').innerHTML= pseudo;
+        document.getElementById('affiche_email').innerHTML= email;
+        
     }
 })
